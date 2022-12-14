@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .container{
+            height: 600px;
+            width: 600px;
+            margin: 0 auto;
+        }
+        img{
+            width: 100%;
+            object-fit: cover;
+
+        }
+        .small{
+            max-width:400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 2rem;
+            transition: .5s ease;
+        }
+        .small>img:hover{
+            transform: scale(1.1);
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="" alt="">
+    </div>
+    <div class="small">
+        <img src="./images/slide-1-md.jpg" alt="">
+        <img src="./images/slide-2-md.jpg" alt="">
+        <img src="./images/slide-3-md.jpg" alt="">
+        <img src="./images/slide-4-md.jpg" alt="">
+        <img src="./images/slide-5-md.jpg" alt="">
+    </div>
+    
+
+    <script>
+        let container = document.querySelector('.container>img');
+        let block = document.querySelectorAll('.small img');
+        console.log(container);
+        console.log(block);
+        let table = [   "./images/slide-1-lg.jpg", 
+                        "./images/slide-2-lg.jpg",
+                        "./images/slide-3-lg.jpg",
+                        "./images/slide-4-lg.jpg",
+                        "./images/slide-5-lg.jpg"
+                    ]
+
+       block.forEach(function(element, index){
+            element.addEventListener('click', function (e) {
+                e.preventDefault();
+                container.setAttribute("src", table[index] );
+                console.log(element);
+                
+            })
+            
+        });
+
+
+
+
+
+    </script>
+</body>
+</html>
